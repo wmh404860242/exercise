@@ -22,9 +22,6 @@
           this.goodsId = x;
         }
       },
-      created (){
-          console.log(this.goodsList)
-      }
     }
 </script>
 

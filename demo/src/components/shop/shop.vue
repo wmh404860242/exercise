@@ -5,11 +5,11 @@
     </div>
     <div style="width: 100%;overflow:scroll;-webkit-overflow-scrolling:touch;position: fixed;top:40px;z-index:999">
       <tab :line-width=2 style="width: 500px">
-        <tab-item selected>全部</tab-item>
-        <tab-item>便宜购</tab-item>
-        <tab-item>限时购</tab-item>
-        <tab-item>经销商专区</tab-item>
-        <tab-item>体验专区</tab-item>
+        <tab-item selected @on-item-click="changeType">全部</tab-item>
+        <tab-item @on-item-click="changeType">便宜购</tab-item>
+        <tab-item @on-item-click="changeType">限时购</tab-item>
+        <tab-item @on-item-click="changeType">经销商专区</tab-item>
+        <tab-item @on-item-click="changeType">体验专区</tab-item>
       </tab>
     </div>
     <div style="height: 100px"></div>
@@ -30,6 +30,7 @@
               status:{
                 pulldownStatus: 'default',
               },
+              goodsType:0,
               List:[{name:'红酒1',price:'100',id:'1'},{name:'红酒2',price:'200',id:'2'},{name:'红酒3',price:'300',id:'3'},{name:'红酒4',price:'400',id:'4'}]
             }
         },
@@ -49,7 +50,15 @@
               setTimeout(function () {
                 pulldown_this.status.pulldownStatus = 'default';
               },2000)
+          },
+          changeType (index){
+              this.goodsType=index
           }
+        },
+        watch: {
+          goodsType(curVal,oldVal){
+            console.log(curVal,oldVal)
+          },
         }
 
     }
