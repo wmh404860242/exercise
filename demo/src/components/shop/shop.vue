@@ -48,6 +48,7 @@
           pullDown (){
               var pulldown_this=this;
               setTimeout(function () {
+                  pulldown_this.List=[{name:'红酒5',price:'100',id:'5'},{name:'红酒6',price:'200',id:'6'},{name:'红酒7',price:'300',id:'7'},{name:'红酒8',price:'400',id:'8'}]
                 pulldown_this.status.pulldownStatus = 'default';
               },2000)
           },
@@ -77,4 +78,5 @@
     border: 1px solid #ddd;
     border-radius: 2px;
   }
+  .weui-search-bar__label{line-height: 26px}
 </style>
